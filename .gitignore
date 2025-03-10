@@ -1,2 +1,6 @@
 # datasets
-./datasets/*
+datasets/
+images/**/*
+metrics/**/*
+
+notebook.pdf
