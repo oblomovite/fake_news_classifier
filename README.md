@@ -35,3 +35,13 @@ Using `wget` command line tool, you can download the datasets from the web:
 wget https://www.cs.ucsb.edu/~william/data/liar_dataset.zip
 unzip liar_dataset.zip -d liar_data
 ```
+
+## Model
+
+### Glove
+
+https://nlp.stanford.edu/projects/glove/
+
+### Google News Vectors
+
+https://www.kaggle.com/datasets/leadbest/googlenewsvectorsnegative300
