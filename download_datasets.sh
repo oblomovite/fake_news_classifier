@@ -28,9 +28,9 @@ echo "Extracting Kaggle datasets..."
 [ -d "fake-news-classification" ] || (unzip -o fake-news-classification.zip -d fake-news-classification && rm fake-news-classification.zip)
 [ -d "fake-and-real-news" ] || (unzip -o fake-and-real-news-dataset.zip -d fake-and-real-news && rm fake-and-real-news-dataset.zip)
 
-echo "Downloading additional datasets..."
-# Download LIAR dataset
-download_if_not_exists "liar_dataset.zip" "wget -q https://www.cs.ucsb.edu/~william/data/liar_dataset.zip"
-[ -d "liar_data" ] || (unzip -o liar_dataset.zip -d liar_data && rm liar_dataset.zip)
+# echo "Downloading additional datasets..."
+# # Download LIAR dataset
+# download_if_not_exists "liar_dataset.zip" "wget -q https://www.cs.ucsb.edu/~william/data/liar_dataset.zip"
+# [ -d "liar_data" ] || (unzip -o liar_dataset.zip -d liar_data && rm liar_dataset.zip)
 
 echo "✔ All datasets are ready!"
