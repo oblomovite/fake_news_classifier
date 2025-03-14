@@ -1,51 +1,3 @@
-## DATA
-
-### Sources
-
-From Kaggle:
-https://www.kaggle.com/datasets/aadyasingh55/fake-news-classification
-https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset
-
-#### [Fake News Classification Dataset](https://www.kaggle.com/datasets/aadyasingh55/fake-news-classification)
-
-The dataset contains 20,800 news articles from 5 different news sources, such as Breitbart, CNN, and the New York Times. The dataset also contains metadata about the articles, such as the date, the article's URL, and the article's text.
-
-#### [Fake and Real News Dataset](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset)
-
-The dataset contains 44,898 news articles from 2 different news sources, such as Breitbart and Reuters. The dataset also contains metadata about the articles, such as the date, the article's URL, and the article's text.
-
-#### [Liar Liar Dataset](https://www.cs.ucsb.edu/~william/data/liar_dataset.zip)
-
-The dataset contains 12,836 short statements taken from PolitiFact.com, a fact-checking website, and classified as true or false. The dataset also contains metadata about the statements, such as the subject, speaker, and the speaker's job title.
-
-### use kaggle api
-
-Using `kaggle` command line tool, you can download the datasets from kaggle:
-
-```bash
-kaggle datasets download -d aadyasingh55/fake-news-classification
-kaggle datasets download -d clmentbisaillon/fake-and-real-news-dataset
-```
-
-### use wget
-
-Using `wget` command line tool, you can download the datasets from the web:
-
-```bash
-wget https://www.cs.ucsb.edu/~william/data/liar_dataset.zip
-unzip liar_dataset.zip -d liar_data
-```
-
-## Model
-
-### Glove
-
-https://nlp.stanford.edu/projects/glove/
-
-### Google News Vectors
-
-https://www.kaggle.com/datasets/leadbest/googlenewsvectorsnegative300
-
 # Fake News Detection Project
 
 This project leverages Natural Language Processing (NLP) and Deep Learning techniques to detect and classify written media as either fake (misinformation) or real (accurate news). The system is built using a CRISP-DM methodology—from business understanding and data collection through to modeling and evaluation.
@@ -92,6 +44,13 @@ The project uses two main datasets:
 - [**Fake News Classification Dataset**](https://www.kaggle.com/datasets/aadyasingh55/fake-news-classification)
 - [**Fake and Real News Dataset**](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset)
 
+The model uses pre-trained word embeddings from:
+
+- [**Google News Vectors**](https://www.kaggle.com/datasets/leadbest/googlenewsvectorsnegative300)
+- [**Glove**](https://nlp.stanford.edu/projects/glove/)
+
+I used the information provided by this [article](https://www.turing.com/kb/guide-on-word-embeddings-in-nlp#glove:-global-vector-for-word-representation) to guide me through the project.
+
 The datasets contain news articles from various sources, along with metadata such as the article's URL, date, and text. The data is labeled as either fake or real, allowing for supervised learning model training.
 
 ## Data Preparation
@@ -109,7 +68,7 @@ This project includes an EDA and Visualization section to explore the dataset's 
 ## Modeling
 
 - **Baseline Model:** TF-IDF + Logistic Regression.
-- **Advanced Model:** LSTM using pre-trained Word2Vec (Google News) embeddings.
+- **Advanced Model:** LSTM using pre-trained Word2Vec (Google News Vector) embeddings.
 
 # Project Structure
 
@@ -128,3 +87,5 @@ news-classification/
 ```
 
 ## Conclusion
+
+The performance of the baseline model (TF-IDF + Logistic Regression) was exceptional, easy to train and interpret. The advanced model (LSTM + Word2Vec) performed similiarly well but required considerably more computational resources and time to train. The choice of model depends on the specific use case and available resources.
