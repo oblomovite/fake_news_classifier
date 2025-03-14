@@ -14,6 +14,40 @@ The goal of this project is to build a robust fake news detection system that ca
 
 ---
 
+## Running the Project
+
+1. Installing the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+2. Downloading the datasets:
+
+```bash
+sh download_datasets.sh
+```
+
+3. Downloading the pre-trained embeddings:
+
+```bash
+mkdir embeddings
+
+# Glove
+wget http://nlp.stanford.edu/data/glove.6B.zip -P embeddings/
+unzip embeddings/glove.6B.zip -d embeddings/
+
+# Google News Vectors
+wget https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz -P embeddings/
+gunzip embeddings/GoogleNews-vectors-negative300.bin.gz
+```
+
+4. Running the Jupyter notebook:
+
+```bash
+jupyter notebook index.ipynb
+```
+
 ## Business Understanding
 
 Misinformation is an exponentially growing problem in the digital age, with fake news spreading rapidly across social media platforms and news aggregators. This project aims to provide a solution to this problem by developing a fake news detection system that can automatically classify news articles as fake or real.
