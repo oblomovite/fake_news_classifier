@@ -1,6 +1,5 @@
 # datasets
-datasets/
-images/**/*
-metrics/**/*
-
-notebook.pdf
+datasets
+images
+metrics
+embeddings
