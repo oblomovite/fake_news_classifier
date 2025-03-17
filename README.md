@@ -19,7 +19,10 @@ The goal of this project is to build a robust fake news detection system that ca
 1. Installing the required packages:
 
 ```bash
+python -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
+jupyter notebook
 ```
 
 2. Downloading the datasets:
